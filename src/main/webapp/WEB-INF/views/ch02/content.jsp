@@ -171,8 +171,9 @@
                   $.ajax({
                      url:"ajax4",
                      success: function(data) {
+                    	 //{"fileName":"photo1.jpg"}
 	                     $("#content").html(
-	                        "<img src='${pageContext.request.contextPath}/resources/images/" + 
+	                        "<img src='${pageContext.request.contextPath}/resources/images/photo/" + 
 	                        data.fileName + "' width='200px'/>");
                      }
                   })

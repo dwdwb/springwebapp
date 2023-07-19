@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mycompany.springwebapp.dto.Ch02FileInfo;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -77,10 +79,11 @@ public class Ch02Controller {
    public String ajax1() {
 	   return "ch02/fragmentHtml";
    }
+   //JSON 리턴
    @GetMapping("/ajax2")
    public void ajax2(HttpServletResponse response) throws Exception {
 	   JSONObject root = new JSONObject();
-	   root.put("fileName", "photo1.jpg");
+	   root.put("fileName", "photo5.jpg");
 	   String responseJson = root.toString();  //{"result":"success"}
 	   
 	   //직접 JSON 응답을 생성
@@ -90,12 +93,21 @@ public class Ch02Controller {
 	   pw.flush();
 	   pw.close();
    }
-   @GetMapping(value="/ajax6", produces="application/json; charset=UTF-8")
+   //JSON 응답 바디에 바로 넣기
+   @GetMapping(value="/ajax3", produces="application/json; charset=UTF-8")
    @ResponseBody  //리턴값을 응답 본문에 바로 싣기
-   public String ajax6() {
+   public String ajax3() {
 	   JSONObject root = new JSONObject();
-	   root.put("fileName", "photo1.jpg");
+	   root.put("fileName", "photo6.jpg");
 	   String responseJson = root.toString();  //{"result":"success"}
 	   return responseJson;
+   }
+   //객체 -> JSON 응답 바디에 바로 넣기
+   @GetMapping(value="/ajax4", produces="application/json; charset=UTF-8")
+   @ResponseBody  //리턴값을 JSON으로 변환(jackson-databind 라이브러리가 필요함)해서 응답 본문에 바로 싣기
+   public Ch02FileInfo ajax4() {
+	   Ch02FileInfo fileInfo = new Ch02FileInfo();
+	   fileInfo.setFileName("photo7.jpg");
+	   return fileInfo;
    }
 }
