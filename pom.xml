@@ -70,6 +70,12 @@
 	    <artifactId>spring-webmvc</artifactId>
 	    <version>5.3.29</version>
 	</dependency>
+	<!-- JSON 의존 설정 -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20230618</version>
+	</dependency>
 	
   </dependencies>
   
