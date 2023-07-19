@@ -11,33 +11,27 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 public class HomeController {
-	public HomeController() {
-		log.info("실행");
-	}
-	
-	//객체 생성 후 실행
-	@PostConstruct
-	public void method1() {
-		log.info("실행1");
-	}
-	
-	//객체 생성 후 실행
-	@PostConstruct
-	public void method2() {
-		log.info("실행2");
-	}
-
-	//객체 소멸 전 실행
-	@PreDestroy
-	public void method3() {
-		log.info("실행3");
-	}
-
-	//http://localhost:8080/springwebapp
-	@RequestMapping("/")
-	public String index() {
-		log.info("실행1");
-		log.info("실행2");
-		return "index";
-	}
+   public HomeController() {
+      log.info("실행");
+   }
+   
+   @PostConstruct  //객체가 만들어지고 나서 바로 생성
+   public void method1() {
+      log.info("실행");
+   }
+   @PostConstruct //객체가 만들어지고 나서 바로 생성
+   public void method2() {
+      log.info("실행");
+   }
+   
+   @PreDestroy //객체가 없어질때 (어플리케이션이 종료될때) 실행된다.
+   public void method3() {
+      log.info("실행");
+   }
+   // http://localhost:8080/springwebapp/ 요청을 하면 HomeController.index() 실행
+   @RequestMapping("/")
+   public String viewIndex() {
+      log.info("실행");
+      return "home";
+   }
 }
