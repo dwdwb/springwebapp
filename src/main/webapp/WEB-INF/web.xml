@@ -56,6 +56,7 @@
   <!-- ===================================================== -->
   
   <!-- ===================================================== -->
+  <!-- Ch02Filter -->
   <filter>
     <filter-name>Ch02FilterA</filter-name>
     <filter-class>com.mycompany.springwebapp.filter.Ch02FilterA</filter-class>
