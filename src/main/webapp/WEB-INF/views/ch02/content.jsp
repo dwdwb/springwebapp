@@ -15,7 +15,9 @@
             <div class="m-2">
                <a href="method?bkind=free&bno=1" class="btn btn-info btn-sm">GET방식(&lt;a&gt;)</a>
             </div>
+            
             <hr/>
+            
             <form class="m-2" method="get" action="${pageContext.request.contextPath}/ch02/method">
                <div class="form-group">
                    <label for="bkind">bkind</label>
@@ -30,6 +32,7 @@
                </div>
                <input type="submit" value="GET방식(&lt;form&gt;)" class="btn btn-info btn-sm"/>
             </form>
+            
             <hr/>
             
             <div class="m-2"><button class="btn btn-info btn-sm" onclick="requestGet()">GET방식(Ajax)</button></div>
@@ -130,7 +133,7 @@
             <a href="javascript:ajax2()" class="btn btn-info btn-sm">AJAX 요청(JSON 응답)</a>
             <a href="javascript:ajax3()" class="btn btn-info btn-sm">AJAX 요청(JSON 응답)</a>
             <a href="javascript:ajax4()" class="btn btn-info btn-sm">AJAX 요청(JSON 응답)</a>
-            <a href="javascript:fileDownLoad()" class="btn btn-info btn-sm">파일 다운로드</a>
+            <a href="fileDownLoad" class="btn btn-info btn-sm">파일 다운로드</a>
             <div id="content" class="mt-2"></div>
             <script>
                function ajax1() {

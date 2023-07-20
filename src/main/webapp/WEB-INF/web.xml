@@ -54,4 +54,20 @@
     <url-pattern>/*</url-pattern>  <!-- contextroot 뒤 모든 파일에 대해 -->
   </filter-mapping>
   <!-- ===================================================== -->
+  
+  <!-- ===================================================== -->
+  <filter>
+    <filter-name>Ch02FilterA</filter-name>
+    <filter-class>com.mycompany.springwebapp.filter.Ch02FilterA</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>Ch02FilterA</filter-name>
+    <url-pattern>/ch02/*</url-pattern>
+  </filter-mapping>
+  <!-- ===================================================== -->
+  
 </web-app>
