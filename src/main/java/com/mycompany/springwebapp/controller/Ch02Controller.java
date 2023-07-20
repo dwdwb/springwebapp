@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.mycompany.springwebapp.dto.Ch02Dto;
 import com.mycompany.springwebapp.dto.Ch02FileInfo;
@@ -33,6 +34,15 @@ public class Ch02Controller {
    public String content() {
       return "ch02/content";
    }
+   
+   //ModelAndView는 잘 안씀
+   /*@RequestMapping("/content")
+   public ModelAndView content() {
+	   ModelAndView mav = new ModelAndView();
+	   mav.setViewName("ch02/content");
+	   return mav;
+   }*/
+   
    //@GetMapping("/method")
    @RequestMapping(value="/method", method=RequestMethod.GET)
    public String method1(String bkind, int bno) {
