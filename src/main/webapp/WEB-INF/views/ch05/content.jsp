@@ -12,7 +12,7 @@
 		<div class="m-2">
 			<a href="createCookie" class="btn btn-outline-warning btn-sm">쿠키 생성</a>
 			<a href="getCookie" class="btn btn-outline-warning btn-sm">쿠키 얻기 (서버)</a>
-			<a href="jvavscript:getCookie()" class="btn btn-outline-warning btn-sm">쿠키 얻기 (JavaScript)</a>
+			<a href="javascript:getCookie()" class="btn btn-outline-warning btn-sm">쿠키 얻기 (JavaScript)</a>
 			<script>
 				function getCookie() {
 					console.log(document.cookie);

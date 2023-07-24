@@ -17,7 +17,7 @@ public class Ch08LoginCheckInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		log.info("실행");
 		
-		//요청 처리 메소드가 @Auth가 붙어 있는지 확인
+		//요청 처리 메소드가 @login가 붙어 있는지 확인
 		HandlerMethod handlerMethod = (HandlerMethod) handler;
 		Login login = handlerMethod.getMethodAnnotation(Login.class);
 		if(login != null) {
