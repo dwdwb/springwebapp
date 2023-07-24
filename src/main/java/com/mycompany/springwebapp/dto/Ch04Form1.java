@@ -13,6 +13,6 @@ public class Ch04Form1 {
 	private String param3;
 	private boolean param4;
 	
-	@DateTimeFormat(pattern="yyy-MM-dd")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date param5;
 }
