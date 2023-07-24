@@ -83,6 +83,7 @@ public class Ch07Controller {
 		return "ch07/request";
 	}
 	
+	//커맨드 매개변수
 	@GetMapping("/useRequest4")
 	public String useRequest4(Ch07Board board) {
 		//request.setAttribute("ch07Board", board);
@@ -90,6 +91,7 @@ public class Ch07Controller {
 		return "ch07/request";
 	}
 
+	//모델의 이름을 다르게 저장하고 싶을 경우
 	@GetMapping("/useRequest5")
 	public String useRequest5(@ModelAttribute("newBoard") Ch07Board board) {
 		//request.setAttribute("ch07Board", board);
