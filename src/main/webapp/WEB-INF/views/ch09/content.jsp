@@ -56,8 +56,8 @@
                   data: formData,
                   cache: false,        //파일이 포함되어 있으니, 브라우저 메모리에 저장하지 마라
                   processData: false,  //title=xxx&desc=yyy& 씩으로 만들지 마라
-                  contentType: false,   //파트마다 Content-Type이 포함되기 때문에 따로 헤더에 Content-Type에 추가하지 마라
-              success: function(data) {
+                  contentType: false,   //파트마다 Content-Type이 포함되기 때문에 따로 헤더에 Content-Type에 추가하지 마라 (한가지만 지정 불가)
+              	  success: function(data) {
                      console.log(data);
                      if(data.result === "success") {
                         window.alert("파일 전송이 성공됨");
@@ -67,7 +67,7 @@
                      $("#link1").attr("href", "filedownload?saveFilename=" + saveFilename);
                      //2) 올린 파일을 바로 보기
                      $("#img1").attr("src", "filedownload?saveFilename=" + saveFilename);
-              }
+                  }
                });
             }
          </script>

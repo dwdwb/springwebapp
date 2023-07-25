@@ -52,37 +52,33 @@ public class Ch09Controller {
 	}*/
 	
 	@PostMapping("/fileupload")
-    public String fileupload(Ch09FileUpload fileUpload, HttpSession session) throws Exception{
-       log.info("title: " + fileUpload.getTitle());
-       log.info("desc: " + fileUpload.getDesc());
-       log.info("originalFilename: " + fileUpload.getAttach().getOriginalFilename());
-       log.info("contentType: " + fileUpload.getAttach().getContentType());
-       log.info("file size: " + fileUpload.getAttach().getSize());
-      
-       //받은 파일을 영구적으로 저장하기
-       //실제 서버에 저장되는 파일 이름(중복이 되면 안됌)
-       String saveFilename = new Date().getTime() + "-" + fileUpload.getAttach().getOriginalFilename();
-       String saveFilepath = "C:/oti/uploadfiles/" + saveFilename;
-       File file = new File(saveFilepath);
-       fileUpload.getAttach().transferTo(file);
-      
-       session.setAttribute("saveFilename", saveFilename);
-       return "redirect:/ch09/content";
-    }
+	public String fileupload(Ch09FileUpload fileUpload, HttpSession session) throws Exception {
+		log.info("title: " + fileUpload.getTitle());
+		log.info("desc: " + fileUpload.getDesc());
+		log.info("file originalFilename: " + fileUpload.getAttach().getOriginalFilename());
+		log.info("file contentType: " + fileUpload.getAttach().getContentType());
+		log.info("file size: " + fileUpload.getAttach().getSize());
+		
+		//받은 파일을 영구적으로 저장하기
+		String saveFilename = new Date().getTime() + "-" + fileUpload.getAttach().getOriginalFilename();
+		String saveFilepath = "C:/OTI/uploadfiles/" + saveFilename;
+		File file = new File(saveFilepath);
+		fileUpload.getAttach().transferTo(file);
+		
+		session.setAttribute("saveFilename", saveFilename);
+		return "redirect:/ch09/content";
+	}
 
-
-	
 	@PostMapping(value="/fileuploadAjax", produces="application/json; charset=UTF-8")
     @ResponseBody
-    public String fileuploadAjax(Ch09FileUpload fileUpload) throws Exception{
-       log.info("title: " + fileUpload.getTitle());
-       log.info("desc: " + fileUpload.getDesc());
-       log.info("originalFilename: " + fileUpload.getAttach().getOriginalFilename());
-       log.info("contentType: " + fileUpload.getAttach().getContentType());
-       log.info("file size: " + fileUpload.getAttach().getSize());
+    public String fileuploadAjax(Ch09FileUpload fileUpload) throws Exception {
+       log.info("title : " + fileUpload.getTitle());
+       log.info("desc : " + fileUpload.getDesc());
+       log.info("file originalFilename : " + fileUpload.getAttach().getOriginalFilename());
+       log.info("file contentType : " + fileUpload.getAttach().getContentType());
+       log.info("file size : " + fileUpload.getAttach().getSize());
       
-       //받은 파일을 영구적으로 저장하기
-       //실제 서버에 저장되는 파일 이름(중복이 되면 안됌)
+       // 받은 파일을 영구적으로 저장하기
        String saveFilename = new Date().getTime() + "-" + fileUpload.getAttach().getOriginalFilename();
        String saveFilepath = "C:/OTI/uploadfiles/" + saveFilename;
        File file = new File(saveFilepath);
@@ -92,8 +88,9 @@ public class Ch09Controller {
        jsonObject.put("result", "success");
        jsonObject.put("saveFilename", saveFilename);
        String json = jsonObject.toString();
+      
        return json;
-    }
+   }
 	   
     @GetMapping("/filedownload")
     public void filedownload(String saveFilename, HttpServletRequest request, HttpServletResponse response) throws Exception{
