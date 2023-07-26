@@ -5,14 +5,11 @@
 
 
 <div class="card m-2">
-	<div class="card-header bg-dark text-white">
-		예외 처리 내용(500)
-		<a href="content" class="btn btn-outline-warning btn-sm">돌아가기</a>
+	<div class="card-header">
+		객체 생성(싱글톤) 및 의존 주입
 	</div>
-	<div class="card-body bg-dark text-white">
-		[경고] 알 수 없는 예외 발생.
-		<br/>
-		즉시 관리자에게 문의 바랍니다.
+	<div class="card-body">
+		실행 결과는 콘솔 창의 로그로 출력
 	</div>
 </div>
 
