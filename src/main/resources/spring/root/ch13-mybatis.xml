@@ -3,10 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- 주어진 DataSource를 이용해서 DB와 연동하고, XML 파일을 이용해서 SQL문을 생성하고 실행하는 역할 -->
 	<bean
 		id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -17,4 +20,11 @@
 		<property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
 	</bean>
 	
+	<!-- 자바 코드에서 MyBatis SqlSessionFactoryBean 객체를 쉽게 이용할 수 있도록 제공되는 객체-->
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory"/>
+	</bean>
+	
+	<!-- MyBatis의 DAO 구현 객체를 생성하기 위한 인터페이스의 위치를 설정 -->
+	<!-- <mybatis-spring:scan base-package="com.mycompany.springwebapp.dao.mybatis"/> -->
 </beans>
