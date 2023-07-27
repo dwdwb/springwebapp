@@ -24,8 +24,7 @@
              ContextPath: /servlet_jsp
               --%>              
                <img src="${pageContext.request.contextPath}/resources/images/logo-spring.png" width="40" height="30" class="d-inline-block align-top">
-                 <!--  전자정부 프레임워크(Spring Framework)    -->
-                 응애응애 귀여운 은지꼬야!
+                 	전자정부 프레임워크(Spring Framework)
             </a>
             <div>
                <div>
