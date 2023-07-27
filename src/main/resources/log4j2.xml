@@ -10,6 +10,14 @@
     <Logger name="com.mycompany.springwebapp" level="debug" additivity="false">  <!-- name: 어떤 패키지에서 출력된 것만 -->  <!-- level: debug로그 이상의 레벨만 출력 (debug, info, warning, error) -->
       <AppenderRef ref="Out"/>
     </Logger>
+    <!-- WebApplication이 DB로 보내는 SQL문을 로그로 출력하기 위한 설정 -->
+    <Logger name="jdbc.sqlonly" level="info" additivity="false">
+    	<AppenderRef ref="Out"/>
+    </Logger>
+    <!-- DB가 보내는 결과를 로그로 출력하기 위한 설정 -->
+    <Logger name="jdbc.resultset" level="info" additivity="false">
+    	<AppenderRef ref="Out"/>
+    </Logger>
     <Root level="error">
       <AppenderRef ref="Out"/>
     </Root>

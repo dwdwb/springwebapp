@@ -6,7 +6,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width-device-width, initial-scale=1.0">
       <link rel="icon" href="${pageContext.request.contextPath}/resources/tomcat.png">
-      <title>Insert title here</title>
+      <title>은지바보</title>
       
       <!-- Bootstrap 을 사용하기 위한 외부 라이브러리 가져오기 -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -24,7 +24,8 @@
              ContextPath: /servlet_jsp
               --%>              
                <img src="${pageContext.request.contextPath}/resources/images/logo-spring.png" width="40" height="30" class="d-inline-block align-top">
-                  전자정부 프레임워크(Spring Framework)   
+                 <!--  전자정부 프레임워크(Spring Framework)    -->
+                 응애응애 귀여운 은지꼬야!
             </a>
             <div>
                <div>
