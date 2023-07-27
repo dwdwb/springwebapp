@@ -6,7 +6,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width-device-width, initial-scale=1.0">
       <link rel="icon" href="${pageContext.request.contextPath}/resources/tomcat.png">
-      <title>은지바보</title>
+      <title>은지천재</title>
       
       <!-- Bootstrap 을 사용하기 위한 외부 라이브러리 가져오기 -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
