@@ -17,9 +17,14 @@ public class Ch13Board {
 	private Date bdate;
 	private String mid;
 	private int bhitcount;
-	private String battachoname;
-	private String battachsname;
-	private String battachtype;
-	private Blob battachdata;
+	//Client -> Controller
 	private MultipartFile battach;
+	//Controller -> Service
+	private String battachoname;
+	private String battachtype;
+	//방법1: 서버 파일 시스템에 파일로 저장 (대용량 파일)
+	private String battachsname;
+	//방법2: DB에 BLOB으로 저장
+	//MyBatis에서 Byte[] <- MyBatis -> BLOB 자동변환
+	private byte[] battachdata;
 }
